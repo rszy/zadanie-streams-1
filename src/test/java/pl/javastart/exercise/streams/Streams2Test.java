@@ -15,8 +15,7 @@ public class Streams2Test {
     private Streams2 streams = new Streams2();
     private List<Person> people;
 
-    @Before
-    public void init() {
+    @Before public void init() {
         people = new ArrayList<>();
         people.add(new Person("Tomek", 2));
         people.add(new Person("Ania", 18));
@@ -25,8 +24,7 @@ public class Streams2Test {
         people.add(new Person("Sebastian", 16));
     }
 
-    @Test
-    public void shouldReturnKidNames() {
+    @Test public void shouldReturnKidNames() {
         // when
         List<String> kids = streams.findKidNames(people);
 
@@ -36,8 +34,7 @@ public class Streams2Test {
         assertThat(kids, hasItem("Sebastian"));
     }
 
-    @Test
-    public void shouldConvertPeopleToUser() {
+    @Test public void shouldConvertPeopleToUser() {
         // when
         List<User> users = streams.convertPeopleToUsers(people);
 
@@ -49,6 +46,5 @@ public class Streams2Test {
         assertThat(users, hasItem(new User("Janusz", 52, "Janusz_52")));
         assertThat(users, hasItem(new User("Sebastian", 16, "Sebastian_16")));
     }
-
 
 }
