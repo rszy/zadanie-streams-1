@@ -10,7 +10,7 @@ public class Streams1 {
     }
 
     public List<Integer> filterOutLowerNumbersThan20(List<Integer> numberList) {
-        return null;
+        return numberList.stream().filter(item -> item >= 20).collect(Collectors.toList());
     }
 
     public List<Book> convertToBooks(List<String> titles) {
